@@ -24,3 +24,11 @@ layout: page
 <p class="center-text" style="padding: 30px;">
   <a href="{{ site.baseurl }}/blog">Back to blog</a>
 </p>
+<div class="PageNavigation">
+  {% if page.previous.url %}
+    <a class="prev" href="{{page.previous.url}}"> <h3><< {{page.previous.title}}</h3></a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="next" href="{{page.next.url}}"> <h3>{{page.next.title}} >></h3></a>
+  {% endif %}
+</div>
