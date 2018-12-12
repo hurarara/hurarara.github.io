@@ -1,0 +1,44 @@
+---
+layout: page
+title: Category
+permalink: /category/
+---
+
+    <!-- Slider Start -->
+<section id="global-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1>Just some of our latest projects.</h1>
+                    <p>Don’t just take our word for it. Check out some of our latest work.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Category Start -->
+<div class="page clearfix">
+  <div class="left">
+	<h1 style="padding:1%; text-align:center;">{{page.title}}</h1>
+	<hr>
+	<ul style="margin-left:20%;">
+	  {% for category in site.categories %}
+	  <h2 id="{{category | first}}" style="margin-bottom:2%;">{{category | first}}</h2>
+	  {% for posts in category %}
+	  {% for post in posts %}
+	  {% if post.url %}
+	  <li style="margin-bottom:1%;" style="text-size:20px;">
+		<time>
+		  {{ post.date | date:"%F" }} {{ post.date | date: "%a" }}.
+		</time>
+		<a class="title" href="{{ post.url | prepend: site.url }}">{{ post.title }}</a>
+	  </li>
+	  {% endif %}
+	  {% endfor %}
+	  {% endfor %}
+	  {% endfor %}
+	</ul>
+	<br/><br/><br/>
+  </div>
+</div>
