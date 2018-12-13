@@ -21,14 +21,24 @@ layout: page
     </div>
   </section>
 </div>
-<p class="center-text" style="padding: 30px;">
-  <a href="{{ site.baseurl }}/blog">Back to blog</a>
-</p>
-<div class="PageNavigation">
-  {% if page.previous.url %}
-    <a class="prev" href="{{page.previous.url}}"> <h3><< {{page.previous.title}}</h3></a>
-  {% endif %}
-  {% if page.next.url %}
-    <a class="next" href="{{page.next.url}}"> <h3>{{page.next.title}} >></h3></a>
-  {% endif %}
-</div>
+
+<section id="post-wrapper-pagenavi">
+  <div style="width:33%; float:left; display:block; overflow: hidden; border:1px solid transparent"></div>
+  <div class="PageNavigation">
+    {% if page.previous.url %}
+      <a href="{{page.previous.url}}"> <h3 class="page prev">[{{page.previous.title}}]<br/><br/> <p> {{page.previous.content | strip_html | truncatewords: 50 }}</p></h3></a>
+    {% endif %}
+    <div class="darkness"></div>
+  </div>
+  <div class="PageNavigation">
+      <a href="{{ site.baseurl }}/blog"> <h3 class="blog"></h3></a>
+      <div class="darkness"></div>
+  </div>
+  <div class="PageNavigation">
+    {% if page.next.url %}
+      <a href="{{page.next.url}}"> <h3 class="page next">[{{page.next.title}}]<br/><br/> <p> {{page.next.content | strip_html | truncatewords: 50 }}</p></h3></a>
+    {% endif %}
+    <div class="darkness"></div>
+  </div>
+  <div style="width:33%; float:left; display:block; overflow: hidden; border:1px solid transparent"></div>
+</section>

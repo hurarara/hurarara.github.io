@@ -75,6 +75,10 @@ header .navbar {
 header .navbar-brand {
   padding-top: 5px;
 }
+header .navbar-brand:hover {
+  transition:all .1s linear;
+  transform:scale(0.9);
+}
 header .navbar-default {
   background: none;
   border: 0px;
@@ -86,6 +90,18 @@ header .navbar-default .navbar-nav li a {
   color: #333333;
   padding: 10px 26px;
   font-size: 15px;
+}
+header .navbar-default .navbar-right .navbar-home:hover {
+  transition:all .2s linear;
+  transform:scale(0.9);
+}
+header .navbar-default .navbar-right .navbar-category:hover {
+  transition:all .2s linear;
+  transform:scale(0.9);
+}
+header .navbar-default .navbar-right .navbar-blog:hover {
+  transition:all .2s linear;
+  transform:scale(0.9);
 }
 font header .navbar-default .navbar-nav li a:hover {
   color: #000;
@@ -158,6 +174,50 @@ font header .navbar-default .navbar-nav li a:hover {
 }
 #intro .section-title p {
   padding-top: 20px;
+}
+  /* post-wrapper-pagenavi */
+#post-wrapper-pagenavi .PageNavigation {
+  font-size: 14px;
+  display: block;
+  width: 10%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+#post-wrapper-pagenavi .prev {
+  background: url(../img/previous-post.png) no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  height: 200px;
+  border-radius: 5px;
+}
+#post-wrapper-pagenavi .blog {
+  background: url(../img/blog-post.png) no-repeat;
+  background-size: cover;
+  text-align: center;
+  height: 200px;
+  border-radius: 5px;
+}
+#post-wrapper-pagenavi .next {
+  background: url(../img/next-post.png) no-repeat;
+  background-size: cover;
+  text-align: center;
+  color: white;
+  height: 200px;
+  border-radius: 5px;
+}
+#post-wrapper-pagenavi .blog:hover {
+  opacity:0.5;
+  transition:all .1s linear;
+  transform:scale(0.8);
+}
+#post-wrapper-pagenavi .page:hover {
+  background-color: #000000;
+  opacity:0.5;
+  transition:all .1s linear;
+  transform:scale(0.8);
 }
 /*--
 	service Start
