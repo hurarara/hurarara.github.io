@@ -171,7 +171,7 @@ comments: true
             // 로컬 스토리지에 데이터를 추가한다.
             // 추가 버튼이 클릭되면 인풋 박스에 값이 있을 때만 저장하고 인풋 박스를 clear 하도록 한다.
             inputAddTodo() {
-                if(this.newTodoItem) {
+                if(this.newTodoItem !== "") {
                     var value = this.newTodoItem.trim();
 
                     // setItem()의 형식은 키, 값이다.
@@ -250,8 +250,8 @@ comments: true
             <!-- v-for 디렉티브를 이용해 아이템의 개수만큼 반복 -->
             <!-- v-for : 지정한 뷰 데이터의 개수만큼 해당 HTML 태그를 반복 출력. -->
             <!-- index : v-for 디렉티브에서 기본적으로 제공하는 변수 -->
-            <!-- ESLint 플러그인으로 인해 에러가 기존은 맞지않는 문법이라고 나옴. 그래서 :key="index" 코드를 추가 -->
-            <li v-for="(todoItem, index) in propsdata" :key="index" class="shadow">
+            <!-- ESLint 플러그인으로 인해 에러가 기존은 맞지않는 문법이라고 나옴. 그래서 :key="todoItem" 코드를 추가 -->
+            <li v-for="(todoItem, index) in propsdata" :key="todoItem" class="shadow">
                 <!-- 체크 아이콘 -->
                 <i class="checkBtn fas fa-check" aria-hidden="true"></i>
                 {{ todoItem }}
@@ -375,7 +375,7 @@ comments: true
     /* CSS 스타일 내용 */
     /* 템플릿에 추가한 HTML 태그의 CSS 스타일을 정의하는 영역 */
 
-    /*  */
+    /* Clear All 버튼의 영역 */
     .clearAllContainer {
         width: 8.5rem;
         height: 50px;
@@ -385,7 +385,7 @@ comments: true
         margin: 0 auto;
         cursor: pointer;    /* 마우스 포인터 변경 */
     }
-    /*  */
+    /* Clear All 버튼 속성 */
     .clearAllBtn {
         color: #e20303;
         display: black;

@@ -120,7 +120,7 @@ comments: true
             // 로컬 스토리지에 데이터를 추가한다.
             // 추가 버튼이 클릭되면 인풋 박스에 값이 있을 때만 저장하고 인풋 박스를 clear 하도록 한다.
             addTodo() {
-                if(this.newTodoItem) {
+                if(this.newTodoItem !== "") {
                     var value = this.newTodoItem.trim();
                     // setItem()의 형식은 키, 값이다.
                     localStorage.setItem(value, value);
